@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La chica de las cookies · Tandil</title>
+<meta name="description" content="Cookies artesanales horneadas en Tandil. Pedí tu box online y recibila en casa.">
+<meta name="theme-color" content="#3B2418">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=Caveat:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF6EC; --paper:#FFFDF9; --dough:#F3DCC0;
+  --choco:#3B2418; --choco-2:#5A3826; --muted:#8A6A58;
+  --pink:#F59AB5; --pink-deep:#E2557F; --pink-soft:#FDE3EA;
+  --line:rgba(59,36,24,.12);
+  --serif:"Fraunces",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif; --hand:"Caveat",cursive;
+  --wrap:min(1180px,calc(100% - 32px)); --r:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--choco);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:var(--wrap);margin-inline:auto}
+
+/* top strip */
+.strip{background:var(--choco);color:var(--cream);font-size:13.5px;text-align:center;padding:9px 12px;letter-spacing:.01em}
+.strip b{color:var(--pink)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:30;background:rgba(255,246,236,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo span{font-family:var(--hand);color:var(--pink-deep);font-size:24px;font-weight:700}
+.navlinks{display:flex;gap:28px;font-weight:500;font-size:15px}
+.navlinks a:hover{color:var(--pink-deep)}
+.cartbtn{position:relative;background:var(--choco);color:var(--cream);padding:10px 16px;border-radius:999px;font-weight:600;font-size:14px;display:flex;gap:8px;align-items:center}
+.cartbtn i{font-style:normal;background:var(--pink);color:var(--choco);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px;font-weight:700}
+@media (max-width:760px){.navlinks{display:none}}
+
+/* hero */
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.tag{display:inline-flex;gap:8px;align-items:center;background:var(--pink-soft);color:var(--pink-deep);font-weight:600;font-size:13px;padding:7px 14px;border-radius:999px}
+.tag .dot{width:8px;height:8px;border-radius:50%;background:var(--pink-deep);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(42px,6.4vw,78px);line-height:.98;letter-spacing:-.035em;margin:20px 0 18px}
+h1 em{font-style:italic;font-weight:500;color:var(--pink-deep)}
+.lead{font-size:18px;color:var(--choco-2);max-width:470px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font-weight:700;font-size:16px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--pink-deep);color:#fff;box-shadow:0 10px 24px -10px var(--pink-deep)}
+.btn-ghost{border:1.5px solid var(--choco)}
+
+/* daily counter */
+.daily{margin-top:32px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px 18px;max-width:440px}
+.daily-top{display:flex;justify-content:space-between;font-size:14px;font-weight:600}
+.daily-top small{color:var(--muted);font-weight:500}
+.bar{height:12px;background:var(--dough);border-radius:99px;margin-top:10px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--pink-deep));border-radius:99px;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
+
+.hero-img{position:relative}
+.hero-img .photo{border-radius:32px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 80px -40px rgba(59,36,24,.55);transform:rotate(1.5deg)}
+.hero-img .photo img{width:100%;height:100%;object-fit:cover}
+.sticker{position:absolute;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:0 18px 40px -18px rgba(59,36,24,.45);font-size:14px}
+.sticker.s1{left:-22px;bottom:48px;transform:rotate(-4deg)}
+.sticker.s1 b{display:block;font-family:var(--serif);font-size:24px}
+.sticker.s2{right:-10px;top:26px;background:var(--choco);color:var(--cream);font-family:var(--hand);font-size:26px;line-height:1;transform:rotate(6deg);padding:14px 18px}
+@media (max-width:860px){
+  .hero{padding:32px 0 24px}
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .hero-img{order:-1;max-width:440px;margin-inline:auto;width:100%}
+  .sticker.s1{left:6px}.sticker.s2{right:6px}
+}
+
+/* trust row */
+.trust{border-block:1px solid var(--line);background:var(--paper)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:22px 0}
+.trust div{display:flex;gap:12px;align-items:center;font-size:14px;color:var(--choco-2)}
+.trust div b{display:block;color:var(--choco);font-size:15px}
+.trust .ico{width:42px;height:42px;flex:none;border-radius:12px;background:var(--pink-soft);display:grid;place-items:center;font-size:20px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:1fr 1fr}}
+
+/* sections */
+section{padding:88px 0}
+.eyebrow{font-family:var(--hand);font-size:28px;color:var(--pink-deep);line-height:1}
+h2{font-family:var(--serif);font-size:clamp(34px,4.4vw,54px);line-height:1.02;letter-spacing:-.03em;margin:6px 0 14px}
+.sub{color:var(--choco-2);max-width:560px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+
+/* menu */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);font-weight:600;font-size:14px;background:var(--paper)}
+.filters button.on{background:var(--choco);color:var(--cream);border-color:var(--choco)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 40px -26px rgba(59,36,24,.5)}
+.card .pic{aspect-ratio:1;overflow:hidden;background:var(--dough);position:relative}
+.card .pic img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:12px;left:12px;background:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:99px}
+.badge.hot{background:var(--pink-deep);color:#fff}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-family:var(--serif);font-size:22px;letter-spacing:-.02em}
+.card p{font-size:14.5px;color:var(--muted);flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.price{font-family:var(--serif);font-weight:700;font-size:22px}
+.add{background:var(--pink-soft);color:var(--pink-deep);font-weight:700;padding:10px 16px;border-radius:999px;font-size:14px;transition:.2s}
+.add:hover{background:var(--pink-deep);color:#fff}
+.add.done{background:var(--choco);color:#fff}
+@media (max-width:560px){.grid{grid-template-columns:1fr 1fr;gap:12px}.card .body{padding:12px}.card h3{font-size:17px}.card p{font-size:13px}.row{flex-direction:column;align-items:stretch;gap:8px}.price{font-size:19px}.add{padding:9px 10px;font-size:13px}}
+
+/* boxes */
+.boxes{background:var(--choco);color:var(--cream);border-radius:40px;width:min(1240px,calc(100% - 16px));margin-inline:auto}
+.boxes .eyebrow{color:var(--pink)}
+.boxes .sub{color:#E6CDBB}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:10px}
+.box.feat{background:var(--pink);color:var(--choco);border:0;transform:translateY(-10px)}
+.box .n{font-family:var(--serif);font-size:64px;font-weight:700;line-height:1;letter-spacing:-.04em}
+.box h3{font-family:var(--serif);font-size:24px}
+.box ul{list-style:none;font-size:15px;display:grid;gap:6px;margin:8px 0 14px;flex:1}
+.box li::before{content:"✓ ";font-weight:700}
+.box .price{font-size:28px}
+.box .add{background:var(--cream);color:var(--choco);text-align:center;padding:14px}
+.box.feat .add{background:var(--choco);color:var(--cream)}
+@media (max-width:860px){.bgrid{grid-template-columns:1fr}.box.feat{transform:none}.boxes{border-radius:28px}}
+
+/* how */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--pink-soft);color:var(--pink-deep);font-family:var(--serif);font-weight:700;font-size:20px;margin-bottom:14px}
+.step h3{font-size:18px;margin-bottom:4px}
+.step p{font-size:14.5px;color:var(--muted)}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+
+/* story */
+.story .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.story .ph{border-radius:32px;overflow:hidden;aspect-ratio:1;transform:rotate(-2deg);box-shadow:0 30px 60px -30px rgba(59,36,24,.5)}
+.story .ph img{width:100%;height:100%;object-fit:cover}
+.story blockquote{font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.25;letter-spacing:-.015em;margin:14px 0 18px}
+.story blockquote em{color:var(--pink-deep)}
+.sign{font-family:var(--hand);font-size:32px;color:var(--pink-deep)}
+@media (max-width:860px){.story .wrap{grid-template-columns:1fr}}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.rev .stars{color:var(--pink-deep);letter-spacing:2px}
+.rev p{margin:10px 0 14px;font-size:15.5px}
+.rev small{color:var(--muted);font-weight:600}
+@media (max-width:860px){.reviews{grid-template-columns:1fr}}
+
+/* faq */
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{font-weight:700;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--pink-deep);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--choco-2);margin-top:8px}
+
+/* final cta */
+.final{text-align:center;background:var(--pink-soft);border-radius:40px;width:min(1240px,calc(100% - 16px));margin:0 auto 24px;padding:80px 20px}
+.final h2{max-width:720px;margin-inline:auto}
+.final .sub{margin-inline:auto}
+
+footer{padding:40px 0 110px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.credit{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);padding:8px 14px;border-radius:999px;color:var(--choco);font-weight:600}
+.credit span{color:var(--pink-deep)}
+
+/* cart drawer */
+.fab{position:fixed;right:16px;bottom:16px;z-index:40;background:#25D366;color:#fff;font-weight:700;padding:15px 20px;border-radius:999px;box-shadow:0 14px 30px -10px rgba(0,0,0,.4);display:flex;gap:10px;align-items:center;transform:translateY(140%);transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.fab:not(.show){visibility:hidden}.fab.show{transform:none}
+.drawer-bg{position:fixed;inset:0;background:rgba(59,36,24,.45);z-index:50;opacity:0;pointer-events:none;transition:.3s}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--cream);z-index:51;transform:translateX(100%);transition:transform .35s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column}
+.open .drawer-bg{opacity:1;pointer-events:auto}.open .drawer{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line)}
+.dh h3{font-family:var(--serif);font-size:24px}
+.items{flex:1;overflow:auto;padding:8px 20px}
+.it{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line)}
+.it img{width:56px;height:56px;border-radius:12px;object-fit:cover}
+.it .nm{flex:1;font-weight:600;font-size:15px}
+.it .nm small{display:block;color:var(--muted);font-weight:500}
+.qty{display:flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:4px}
+.qty button{width:26px;height:26px;border-radius:50%;background:var(--pink-soft);font-weight:700}
+.df{padding:20px;border-top:1px solid var(--line);display:grid;gap:10px}
+.df label{font-size:13px;font-weight:600;color:var(--muted)}
+.df input,.df select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--paper);font:inherit}
+.tot{display:flex;justify-content:space-between;font-family:var(--serif);font-size:22px;font-weight:700}
+.send{background:#25D366;color:#fff;padding:16px;border-radius:999px;font-weight:700;text-align:center;font-size:16px}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+</style>
+</head>
+<body>
+
+<div class="strip">🍪 Horneado del día en Tandil · Pedidos hasta las <b>18 hs</b> · Envíos a domicilio</div>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">🍪 La chica <span>de las cookies</span></a>
+    <div class="navlinks">
+      <a href="#menu">Cookies</a><a href="#boxes">Boxes</a><a href="#como">Cómo pedir</a><a href="#historia">Mi historia</a>
+    </div>
+    <button class="cartbtn" onclick="toggleCart(true)">Mi pedido <i id="count">0</i></button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag"><span class="dot"></span>Horneando hoy · Tandil</span>
+      <h1>Cookies gigantes,<br><em>hechas con amor</em><br>y a mano.</h1>
+      <p class="lead">Cookies artesanales rellenas, red velvet y ediciones especiales. Elegí tus favoritas, armá tu box y te la llevamos calentita.</p>
+      <div class="ctas">
+        <a class="btn btn-main" href="#menu">Armar mi pedido →</a>
+        <a class="btn btn-ghost" href="#boxes">Ver boxes para regalar</a>
+      </div>
+      <div class="daily">
+        <div class="daily-top"><span>🍪 Cookies de hoy</span><small><b id="left">12</b> disponibles de 30</small></div>
+        <div class="bar"><span id="barfill"></span></div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="photo"><img src="img/box.jpg" alt="Box de cookies artesanales"></div>
+      <div class="sticker s1"><b>+12.700</b>personas nos siguen 💗</div>
+      <div class="sticker s2">¡recién<br>horneadas!</div>
+    </div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="wrap">
+    <div><span class="ico">🧈</span><span><b>Manteca real</b>Sin premezclas</span></div>
+    <div><span class="ico">🔥</span><span><b>Horneado diario</b>Nada de stock viejo</span></div>
+    <div><span class="ico">🛵</span><span><b>Envío en Tandil</b>O retirás sin costo</span></div>
+    <div><span class="ico">🎁</span><span><b>Listas para regalar</b>Box + tarjeta</span></div>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">el menú</div>
+        <h2>Elegí tus cookies</h2>
+        <p class="sub">Tocá “Agregar” y armamos el pedido por vos. Al final se envía solo por WhatsApp, ordenadito.</p>
+      </div>
+      <div class="filters" id="filters">
+        <button class="on" data-f="all">Todas</button>
+        <button data-f="clasicas">Clásicas</button>
+        <button data-f="rellenas">Rellenas</button>
+        <button data-f="especiales">Especiales</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="boxes" id="boxes">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">para regalar (o no compartir)</div>
+        <h2>Boxes armadas</h2>
+        <p class="sub">La forma más rica de sorprender. Cumpleaños, aniversarios, Día de la Madre o un martes cualquiera.</p>
+      </div>
+    </div>
+    <div class="bgrid">
+      <div class="box">
+        <div class="n">×4</div><h3>Box Antojo</h3>
+        <ul><li>4 cookies a elección</li><li>Caja kraft con moño</li><li>Ideal para merendar</li></ul>
+        <div class="price">$ 12.000</div>
+        <button class="add" data-id="box4">Agregar box</button>
+      </div>
+      <div class="box feat">
+        <div class="n">×6</div><h3>Box Regalo 💗</h3>
+        <ul><li>6 cookies a elección</li><li>Tarjeta con dedicatoria</li><li>Jugo natural de regalo</li><li>La más pedida</li></ul>
+        <div class="price">$ 17.500</div>
+        <button class="add" data-id="box6">Agregar box</button>
+      </div>
+      <div class="box">
+        <div class="n">×12</div><h3>Box Fiesta</h3>
+        <ul><li>12 cookies surtidas</li><li>Para eventos y oficinas</li><li>Pedí con 48 hs</li></ul>
+        <div class="price">$ 32.000</div>
+        <button class="add" data-id="box12">Agregar box</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como">
+  <div class="wrap">
+    <div class="eyebrow">súper fácil</div>
+    <h2>Cómo pedir</h2>
+    <div class="steps" style="margin-top:32px">
+      <div class="step"><h3>Elegí</h3><p>Sumá cookies o boxes a tu pedido desde la web.</p></div>
+      <div class="step"><h3>Completá</h3><p>Nombre, día y si es envío o retiro.</p></div>
+      <div class="step"><h3>Enviá</h3><p>Se abre WhatsApp con el pedido ya escrito.</p></div>
+      <div class="step"><h3>Disfrutá</h3><p>Te confirmo y horneo tus cookies ese día.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="historia">
+  <div class="wrap">
+    <div class="ph"><img src="img/frambuesa.jpg" alt="Cookie de frambuesa y chocolate blanco"></div>
+    <div>
+      <div class="eyebrow">mi historia</div>
+      <h2>Hola, soy Valen 👋</h2>
+      <blockquote>“Empecé horneando en la cocina de casa y hoy mi sueño es <em>vivir de esto</em>. Cada cookie que comprás me acerca un poquito más.”</blockquote>
+      <p class="sub">Todo lo hago yo, a mano, en Tandil. Gracias por bancar un emprendimiento real.</p>
+      <div class="sign" style="margin-top:14px">Valen 💗</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">lo que dicen</div>
+    <h2>Clientes felices</h2>
+    <div class="reviews" style="margin-top:32px">
+      <div class="rev"><div class="stars">★★★★★</div><p>“La red velvet es una locura. Pedí una box para mi mamá y lloró jaja.”</p><small>— Cliente de ejemplo</small></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>“Llegaron tibias y enormes. Ya es mi antojo de todos los viernes.”</p><small>— Cliente de ejemplo</small></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>“Encargué 24 para la oficina y no sobró ni una. Súper puntual.”</p><small>— Cliente de ejemplo</small></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap faq">
+    <div class="eyebrow">dudas</div>
+    <h2>Preguntas frecuentes</h2>
+    <details open><summary>¿Hasta qué hora puedo pedir?</summary><p>Pedidos para el mismo día hasta las 18 hs, o reservá para otro día.</p></details>
+    <details><summary>¿Hacen envíos?</summary><p>Sí, a todo Tandil. También podés retirar sin costo.</p></details>
+    <details><summary>¿Cómo pago?</summary><p>Transferencia, Mercado Pago o efectivo al recibir.</p></details>
+    <details><summary>¿Hacen pedidos para eventos?</summary><p>¡Sí! Boxes de 12 o más con 48 hs de anticipación.</p></details>
+  </div>
+</section>
+
+<div class="final">
+  <div class="eyebrow">¿se te antojó?</div>
+  <h2>Hoy quedan <span id="left2">12</span> cookies. La tuya ya se está horneando.</h2>
+  <div class="ctas" style="justify-content:center"><a class="btn btn-main" href="#menu">Pedir ahora →</a></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 La chica de las cookies · Tandil · @valenn_colotti</span>
+    <a class="credit" href="#">Web hecha con 💗 por <span>[Tu marca]</span></a>
+  </div>
+</footer>
+
+<button class="fab" id="fab" onclick="toggleCart(true)">🛒 Ver pedido · <span id="fabtot">$0</span></button>
+
+<div id="cart">
+  <div class="drawer-bg" onclick="toggleCart(false)"></div>
+  <aside class="drawer">
+    <div class="dh"><h3>Tu pedido</h3><button onclick="toggleCart(false)" style="font-size:26px">×</button></div>
+    <div class="items" id="items"></div>
+    <div class="df">
+      <label>Tu nombre<input id="nm" placeholder="Ej: Sofi"></label>
+      <label>Entrega<select id="ent"><option>Envío a domicilio</option><option>Retiro</option></select></label>
+      <label>¿Para cuándo?<select id="dia"><option>Hoy</option><option>Mañana</option><option>Otro día (lo coordinamos)</option></select></label>
+      <div class="tot"><span>Total</span><span id="tot">$0</span></div>
+      <a class="send" id="send" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+    </div>
+  </aside>
+</div>
+
+<script>
+// Número de WhatsApp de la cuenta (formato 549 + área + número). Vacío = deja elegir contacto.
+const WA = "";
+const P = [
+  {id:"clasica",n:"Clásica chips",d:"Masa dorada con trozos de chocolate semiamargo.",p:3000,c:"clasicas",img:"img/clasica.jpg",b:"Favorita"},
+  {id:"red",n:"Red Velvet",d:"Red velvet con chocolate blanco y corazones.",p:3500,c:"rellenas",img:"img/redvelvet.jpg",b:"🔥 Top ventas",hot:1},
+  {id:"frambuesa",n:"Frambuesa & blanco",d:"Frambuesas, chocolate blanco y bombón crocante.",p:3800,c:"especiales",img:"img/frambuesa.jpg"},
+  {id:"rosa",n:"Choco rosa",d:"Doble chocolate con drizzle rosa y corazones.",p:3500,c:"rellenas",img:"img/rosa.jpg"},
+  {id:"ma",n:"Cookie con nombre",d:"Personalizada con letras de chocolate. ¡Ideal regalo!",p:4200,c:"especiales",img:"img/clasica.jpg",b:"Personalizable"},
+];
+const B = {box4:{n:"Box Antojo ×4",p:12000,img:"img/box.jpg"},box6:{n:"Box Regalo ×6",p:17500,img:"img/box.jpg"},box12:{n:"Box Fiesta ×12",p:32000,img:"img/box.jpg"}};
+const ALL = Object.assign({},...P.map(x=>({[x.id]:x})),B);
+const cart = {};
+const $ = s=>document.querySelector(s);
+const money = n=>"$"+n.toLocaleString("es-AR");
+
+function render(f="all"){
+  $("#grid").innerHTML = P.filter(x=>f=="all"||x.c==f).map(x=>`
+    <article class="card">
+      <div class="pic"><img src="${x.img}" alt="${x.n}" loading="lazy">${x.b?`<span class="badge ${x.hot?"hot":""}">${x.b}</span>`:""}</div>
+      <div class="body"><h3>${x.n}</h3><p>${x.d}</p>
+        <div class="row"><span class="price">${money(x.p)}</span><button class="add" data-id="${x.id}">+ Agregar</button></div>
+      </div>
+    </article>`).join("");
+}
+document.addEventListener("click",e=>{
+  const a=e.target.closest(".add"); if(a){add(a.dataset.id); a.classList.add("done"); a.textContent="✓ Agregado"; setTimeout(()=>{a.classList.remove("done");a.textContent=a.closest(".box")?"Agregar box":"+ Agregar"},1200)}
+  const f=e.target.closest("#filters button"); if(f){document.querySelectorAll("#filters button").forEach(b=>b.classList.remove("on"));f.classList.add("on");render(f.dataset.f)}
+  const q=e.target.closest("[data-q]"); if(q){const [id,d]=q.dataset.q.split(":");cart[id]=(cart[id]||0)+ +d;if(cart[id]<=0)delete cart[id];update()}
+});
+function add(id){cart[id]=(cart[id]||0)+1;update()}
+function update(){
+  const ids=Object.keys(cart); const n=ids.reduce((s,i)=>s+cart[i],0); const t=ids.reduce((s,i)=>s+cart[i]*ALL[i].p,0);
+  $("#count").textContent=n; $("#tot").textContent=money(t); $("#fabtot").textContent=money(t);
+  $("#fab").classList.toggle("show",n>0);
+  $("#items").innerHTML = ids.length? ids.map(i=>`<div class="it"><img src="${ALL[i].img}" alt=""><div class="nm">${ALL[i].n}<small>${money(ALL[i].p)} c/u</small></div><div class="qty"><button data-q="${i}:-1">−</button>${cart[i]}<button data-q="${i}:1">+</button></div></div>`).join("") : `<p class="empty">Todavía no agregaste nada 🍪</p>`;
+  link();
+}
+function link(){
+  const ids=Object.keys(cart);
+  const lines=ids.map(i=>`• ${cart[i]} × ${ALL[i].n} — ${money(cart[i]*ALL[i].p)}`).join("\n");
+  const t=ids.reduce((s,i)=>s+cart[i]*ALL[i].p,0);
+  const msg=`¡Hola Valen! 🍪 Quiero hacer un pedido:\n\n${lines}\n\nTotal: ${money(t)}\nNombre: ${$("#nm").value||"-"}\nEntrega: ${$("#ent").value}\nPara: ${$("#dia").value}`;
+  $("#send").href=`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+}
+["#nm","#ent","#dia"].forEach(s=>$(s).addEventListener("input",link));
+function toggleCart(o){$("#cart").classList.toggle("open",o)}
+render(); update();
+// contador del día (demo)
+setTimeout(()=>$("#barfill").style.width=(18/30*100)+"%",300);
+</script>
+</body>
+</html>

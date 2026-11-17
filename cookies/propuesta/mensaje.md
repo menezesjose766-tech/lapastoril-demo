@@ -3,7 +3,7 @@
 ## Mensaje 1 (DM de Instagram, corto, con la imagen pitch.png)
 
 Hola Valen! 👋 Vi tu video de las 30 cookies por día y me quedé pensando en eso.
-Hago páginas web y me tomé el atrevimiento de armarte una muestra de cómo se vería tu tienda online 🍪 (te mando la imagen).
+Hago páginas web y me tomé el atrevimiento de diseñarte una muestra de tu tienda online, con una cookie en 3D que gira y sigue el dedo 🍪 (te mando la imagen).
 
 La idea: tus seguidores entran, eligen cookies o boxes, y el pedido te llega por WhatsApp **ya armado** (qué quieren, cuántas, total, nombre, envío o retiro). Sin comisiones por venta y sin apps raras.
 
