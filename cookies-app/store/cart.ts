@@ -36,7 +36,7 @@ export const useCart = create<CartState>()(
       removeAt: (i) => set((s) => ({ items: s.items.filter((_, k) => k !== i) })),
       clear: () => set({ items: [] }),
     }),
-    { name: "lcc-cart", storage: createJSONStorage(() => localStorage), skipHydration: true }
+    { name: "lcc-cart-v2", storage: createJSONStorage(() => localStorage), skipHydration: true }
   )
 );
 

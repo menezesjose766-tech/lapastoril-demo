@@ -7,7 +7,7 @@ import { TLink } from "@/components/ui/TLink";
 import { Arrow, pill } from "@/components/ui/Button";
 import { Bike, Flame } from "lucide-react";
 
-const FILL = ["red-velvet", "clasica", "oreo", "frambuesa", "dulce-de-leche", "choco-rosa"];
+const FILL = ["red-velvet", "clasica", "choco-rosa", "frambuesa", "red-velvet", "clasica"];
 
 function BoxFillMock() {
   return (
@@ -49,7 +49,7 @@ function BakeMock() {
       <div className="absolute inset-0" style={{ background: "radial-gradient(60% 50% at 50% 70%, rgba(255,140,60,.55), transparent 70%)" }} />
       <div className="absolute inset-x-6 bottom-8 h-1.5 rounded-full bg-[#5A3324]" />
       <div className="relative grid grid-cols-2 gap-4 w-[64%] -mt-6">
-        {["clasica", "marshmallow", "red-velvet", "dulce-de-leche"].map((id, i) => (
+        {["clasica", "frambuesa", "red-velvet", "choco-rosa"].map((id, i) => (
           <motion.div key={id} animate={{ scale: [0.86, 1, 0.86] }} transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.2 }}>
             <Cookie id={id} seed={"b" + i} className="w-full" />
           </motion.div>

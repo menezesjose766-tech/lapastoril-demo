@@ -10,17 +10,21 @@ export type Flavour = {
   drizzle?: string;
   drizzle2?: string;
   topping?: "hearts" | "berries" | "cookie" | "marshmallow" | "caramel" | "nuts" | "none";
+  /** Foto real recortada (PNG/WebP sin fondo, cuadrada). Si existe, reemplaza a la ilustración. */
+  photo?: string;
 };
 
 export const FLAVOURS: Flavour[] = [
   {
     id: "clasica", name: "Clásica con chips", short: "Clásica",
-    desc: "Masa de manteca dorada, centro húmedo y trozos grandes de chocolate semiamargo. La que empezó todo.",
+    desc: "Masa de manteca dorada, centro húmedo y trozos de semiamargo. Si querés, con tu nombre en letras de chocolate.",
+    photo: "cookies/clasica.webp",
     bg: "#F5EDE6", dough: "#D9A066", doughDark: "#A86A35", chunks: ["#3B1E14", "#4A2618"], topping: "none",
   },
   {
     id: "red-velvet", name: "Red velvet", short: "Red velvet",
     desc: "Masa red velvet con chips de chocolate blanco, drizzle de vainilla y corazones rosas.",
+    photo: "cookies/red-velvet.webp",
     bg: "#F7DCE3", dough: "#B23A48", doughDark: "#7E2230", chunks: ["#FFF6EC", "#F8EBDD"], drizzle: "#FFF3E6", topping: "hearts",
   },
   {
@@ -31,11 +35,13 @@ export const FLAVOURS: Flavour[] = [
   {
     id: "frambuesa", name: "Frambuesa y blanco", short: "Frambuesa",
     desc: "Frambuesas, chocolate blanco y bombones crocantes. Ácida, dulce y súper fotogénica.",
+    photo: "cookies/frambuesa.webp",
     bg: "#F8D9DF", dough: "#E2B47A", doughDark: "#B07C43", chunks: ["#C2185B", "#FFF6EC"], drizzle: "#FFF3E6", topping: "berries",
   },
   {
     id: "choco-rosa", name: "Choco rosa", short: "Choco rosa",
     desc: "Doble chocolate, centro bien gooey y drizzle de chocolate rosa con corazones blancos.",
+    photo: "cookies/choco-rosa.webp",
     bg: "#EFD3D9", dough: "#5A3221", doughDark: "#3B1E14", chunks: ["#2A120A", "#7A4A33"], drizzle: "#F2A7C3", topping: "hearts",
   },
   {
@@ -51,3 +57,10 @@ export const FLAVOURS: Flavour[] = [
 ];
 
 export const flavourById = (id: string) => FLAVOURS.find((f) => f.id === id)!;
+
+/** Sabores que se muestran en la web: solo los que tienen foto real.
+ *  Para sumar uno, agregá su foto en public/cookies/ y el campo `photo`. */
+export const MENU: Flavour[] = FLAVOURS.filter((f) => f.photo);
+
+/** Para pedidos viejos o de ejemplo: si un sabor no está en el menú, usa uno que sí. */
+export const inMenu = (id: string, i = 0) => (MENU.some((f) => f.id === id) ? id : MENU[i % MENU.length].id);

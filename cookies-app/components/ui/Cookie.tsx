@@ -155,6 +155,13 @@ function CookieInner({ f, seed, clip }: { f: Flavour; seed: string; clip: string
 export const Cookie = memo(function Cookie({ id, seed = "a", className, style }: { id: string; seed?: string; className?: string; style?: React.CSSProperties }) {
   const f = flavourById(id);
   const clip = "ckc" + useId().replace(/:/g, "");
+  if (f.photo)
+    return (
+      <svg viewBox="0 0 200 200" className={className} style={style} role="img" aria-label={`Cookie ${f.name}`}>
+        <ellipse cx="104" cy="112" rx="82" ry="78" fill="#3B1E14" opacity=".3" filter="url(#ck-shadow)" />
+        <image href={f.photo} x="4" y="4" width="192" height="192" preserveAspectRatio="xMidYMid meet" />
+      </svg>
+    );
   return (
     <svg viewBox="0 0 200 200" className={className} style={style} role="img" aria-label={`Cookie ${f.name}`}>
       <CookieInner f={f} seed={seed} clip={clip} />

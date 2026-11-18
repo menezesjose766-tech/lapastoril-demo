@@ -16,7 +16,7 @@ export default function Sizes() {
           <p className="num text-[13px] uppercase tracking-[0.18em] mb-4">Tienda</p>
           <h2 className="display text-[clamp(48px,6.4vw,100px)]">Elegí el tamaño.</h2>
         </div>
-        <p className="max-w-[340px] text-[17px] leading-snug text-choco/75">Tres cajas, siete sabores. Mezclalos como quieras: cada hueco es una cookie.</p>
+        <p className="max-w-[340px] text-[17px] leading-snug text-choco/75">Tres cajas, todos los sabores. Mezclalos como quieras: cada hueco es una cookie.</p>
       </div>
       <div className="grid md:grid-cols-3 gap-5">
         {([4, 6, 12] as BoxSize[]).map((n, i) => {

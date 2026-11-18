@@ -2,7 +2,7 @@
 import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight, Trash2 } from "lucide-react";
-import { FLAVOURS } from "@/data/flavours";
+import { MENU as FLAVOURS } from "@/data/flavours";
 import { BOXES, money } from "@/data/config";
 import { useCart } from "@/store/cart";
 import { useUI } from "@/store/ui";

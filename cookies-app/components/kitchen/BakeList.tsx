@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FLAVOURS } from "@/data/flavours";
+import { MENU as FLAVOURS } from "@/data/flavours";
 import type { Order } from "@/store/orders";
 import { Cookie } from "@/components/ui/Cookie";
 

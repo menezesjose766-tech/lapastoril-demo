@@ -41,11 +41,11 @@ export default function Hero() {
 
         <div className="relative h-[min(92vw,560px)] lg:h-[600px]">
           <motion.div style={{ y: yBox }} className="absolute right-0 top-[20%] w-[78%] lg:w-[80%]" initial={{ opacity: 0, x: 60, rotate: 6 }} animate={{ opacity: 1, x: 0, rotate: 4 }} transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}>
-            <OpenBox ids={["red-velvet", "clasica", "oreo", "frambuesa", "dulce-de-leche", "choco-rosa"]} />
+            <OpenBox ids={["red-velvet", "clasica", "choco-rosa", "frambuesa", "choco-rosa", "red-velvet"]} />
           </motion.div>
           <motion.div style={{ y: yStack, rotate: rot }} className="absolute left-0 bottom-0 w-[44%]" initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}>
             <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-              <CookieStack ids={["clasica", "marshmallow", "red-velvet", "choco-rosa"]} />
+              <CookieStack ids={["clasica", "frambuesa", "red-velvet", "choco-rosa"]} />
             </motion.div>
           </motion.div>
         </div>

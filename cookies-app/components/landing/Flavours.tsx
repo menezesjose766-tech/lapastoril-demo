@@ -1,7 +1,7 @@
 "use client";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { FLAVOURS } from "@/data/flavours";
+import { MENU as FLAVOURS } from "@/data/flavours";
 import { Cookie } from "@/components/ui/Cookie";
 import { useCart } from "@/store/cart";
 import { useGo } from "@/components/ui/TLink";

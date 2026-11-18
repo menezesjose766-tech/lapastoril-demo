@@ -1,7 +1,7 @@
 "use client";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { FLAVOURS } from "@/data/flavours";
+import { MENU as FLAVOURS, inMenu } from "@/data/flavours";
 import { BOXES, DELIVERY_FEE, SLOTS, type BoxSize } from "@/data/config";
 
 export type Status = "new" | "baking" | "ready" | "done";
@@ -50,7 +50,7 @@ function seed(): Order[] {
     { name: "Cami", contact: "@camiii", size: 6 as BoxSize, mode: "delivery" as const, slot: SLOTS[2], note: "Una es para regalo 💝", status: "baking" as Status, items: ["frambuesa", "frambuesa", "red-velvet", "marshmallow", "clasica", "choco-rosa"] },
     { name: "Agus", contact: "2494 61-9876", size: 6 as BoxSize, mode: "pickup" as const, slot: SLOTS[0], note: "", status: "ready" as Status, items: ["clasica", "clasica", "dulce-de-leche", "dulce-de-leche", "oreo", "marshmallow"] },
   ];
-  return base.map((b, i) => makeOrder({ ...b, day: today, dayLabel: "Hoy", num: 321 + i, createdAt: t - (60 - i * 9) * 60000 }));
+  return base.map((b, i) => makeOrder({ ...b, items: b.items.map(inMenu), day: today, dayLabel: "Hoy", num: 321 + i, createdAt: t - (60 - i * 9) * 60000 }));
 }
 
 type OrdersState = {
@@ -89,6 +89,6 @@ export const useOrders = create<OrdersState>()(
       },
       reset: () => set({ orders: seed(), seeded: true }),
     }),
-    { name: "lcc-orders", storage: createJSONStorage(() => localStorage), skipHydration: true }
+    { name: "lcc-orders-v2", storage: createJSONStorage(() => localStorage), skipHydration: true }
   )
 );

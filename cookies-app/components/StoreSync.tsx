@@ -13,8 +13,8 @@ export default function StoreSync() {
       useUI.getState().setHydrated();
     });
     const onStorage = (e: StorageEvent) => {
-      if (e.key === "lcc-orders") useOrders.persist.rehydrate();
-      if (e.key === "lcc-cart") useCart.persist.rehydrate();
+      if (e.key === "lcc-orders-v2") useOrders.persist.rehydrate();
+      if (e.key === "lcc-cart-v2") useCart.persist.rehydrate();
     };
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);

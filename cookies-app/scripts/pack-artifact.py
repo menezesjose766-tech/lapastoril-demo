@@ -61,4 +61,9 @@ for dirpath, _, files in os.walk(os.path.join(src, "_next", "static")):
         else:
             shutil.copy(os.path.join(dirpath, f), out)
         n += 1
+# fotos de las cookies
+for f in sorted(os.listdir(os.path.join(root, "public", "cookies"))):
+    os.makedirs(os.path.join(dst, "cookies"), exist_ok=True)
+    shutil.copy(os.path.join(root, "public", "cookies", f), os.path.join(dst, "cookies", f))
+    n += 1
 print(f"index.html {os.path.getsize(os.path.join(dst,'index.html'))//1024} KB, {n} archivos")
